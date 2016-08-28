@@ -98,5 +98,5 @@ There exists also a simple back reference from a group to its members. By callin
   [<Group 'friends'>]
 
   >>> friends = friends[0]
-  >>>friends.members
+  >>> friends.members
   [<Person 'Arthur Leander'>, <Person 'Kirsten Raymonde'>]
