@@ -72,7 +72,7 @@ At this point the address book has one group and one person that belongs to this
   >>> all_people[1].email_addresses
   ['k.raymonde@elgin.ca']
 
-You can as well filter the results by different criteria by calling `filter()` in place of `all()`. The `filter()` methods accepts one or more expressions that must be of a certain format. If multiple expressions are passed, they are implicitly joined using `AND` operator.
+You can as well filter the results by different criteria by calling `filter()` in place of `all()`. The `filter()` methods accepts one or more expressions that must be of a certain format. If multiple expressions are passed, they are implicitly joined using ``AND`` operator.
 
 The format of the filter expression is `<entity_field_name> is|not|contains <value>`. Entity field name is the entity class attribute name; operator is one of `is`, `not`, `contains`; value is a string to search for in the entity field value
 
