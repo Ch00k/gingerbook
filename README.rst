@@ -1,3 +1,8 @@
+.. image:: https://travis-ci.org/Ch00k/gingerbook.svg?branch=master
+    :target: https://travis-ci.org/Ch00k/gingerbook
+    :alt: Travis-CI
+
+
 gingerbook
 ==========
 gingerbook is a simple address book written in Python. It supports adding people and groups, while also adding people to those groups.
