@@ -17,6 +17,7 @@ def update_group_member_ids_relationship(data, person_id, *group_ids):
             group['member_ids'].append(person_id)
     return data
 
+
 def check_group_ids_exist(data, group_ids):
     existing_group_ids = [group['id'] for group in data['groups']]
     for group_id in group_ids:

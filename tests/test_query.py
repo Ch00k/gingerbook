@@ -1,11 +1,7 @@
-import pytest
 from deepdiff import DeepDiff
 
-from gingerbook import GingerBook
 from gingerbook.group import Group
 from gingerbook.person import Person
-
-from gingerbook.utils import read_data, write_data
 
 
 def test_find_all_groups(address_book, data):

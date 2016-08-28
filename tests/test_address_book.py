@@ -5,11 +5,11 @@ from gingerbook import GingerBook
 from gingerbook.group import Group
 from gingerbook.person import Person
 
-from gingerbook.utils import read_data, write_data
+from gingerbook.utils import read_data
 
 
 def test_initialize_datastore(datastore):
-    address_book = GingerBook(datastore=datastore)
+    GingerBook(datastore=datastore)
     data = read_data(datastore=datastore)
     expected_data = {'groups': [], 'people': []}
     diff = DeepDiff(data, expected_data, ignore_order=True)
