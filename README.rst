@@ -11,9 +11,13 @@ A person can have first name, last name, one or more email addresses, one or mor
 
 Installation
 ------------
-.. code-block:: python
+::
 
   pip install gingerbook
+
+or (untill the package is on PyPI)::
+
+	python setup.py install
 
 Usage
 -----
@@ -105,3 +109,14 @@ There exists also a simple back reference from a group to its members. By callin
   >>> friends = friends[0]
   >>> friends.members
   [<Person 'Arthur Leander'>, <Person 'Kirsten Raymonde'>]
+
+Running tests
+-------------
+To run the tests::
+
+	pip install -r dev-requirements.txt
+	py.test tests
+
+or (and I'll buy you a beer if you tell me why tox does not work here!)::
+
+	tox

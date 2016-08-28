@@ -1,3 +1,5 @@
 deepdiff==2.5.1
 pytest==3.0.1
 flake8==3.0.4
+tox==2.3.1
+-e .
