@@ -117,6 +117,6 @@ To run the tests::
 	pip install -r dev-requirements.txt
 	py.test tests
 
-or (and I'll buy you a beer if you tell me why tox does not work here!)::
+or (and I'll buy you a beer if you tell me why tox does not work for me: https://gist.github.com/Ch00k/d96111763a92df0d205232ec3c461415)::
 
 	tox
