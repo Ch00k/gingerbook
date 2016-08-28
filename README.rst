@@ -6,12 +6,15 @@ A person can have first name, last name, one or more email addresses, one or mor
 
 Installation
 ------------
-::
+.. code-block:: python
+
   pip install gingerbook
 
 Usage
 -----
-To start using gingerbook you first need to create an instance of `GingerBook` class passing it a file path that will be used as the datastore. If the file passed does not already exist it will be created::
+To start using gingerbook you first need to create an instance of `GingerBook` class passing it a file path that will be used as the datastore. If the file passed does not already exist it will be created
+
+.. code-block:: python
 
   >>> from gingerbook import GingerBook
 
@@ -19,7 +22,9 @@ To start using gingerbook you first need to create an instance of `GingerBook` c
   >>> gb
   <GingerBook '/tmp/gingerbook.db'>
 
-Creating entities (groups or people) is done by instantiating a corresponding entity class (`Group` or `Person`) and passing the instance (or multiple instances) to `GingerBook.add`, like this::
+Creating entities (groups or people) is done by instantiating a corresponding entity class (`Group` or `Person`) and passing the instance (or multiple instances) to `GingerBook.add`, like this
+
+.. code-block:: python
 
   >>> from gingerbook.group import Group
   >>> from gingerbook.person import Person
@@ -49,7 +54,9 @@ Creating entities (groups or people) is done by instantiating a corresponding en
 
 Note that you have to pass group IDs, not group names, as `group_ids` argument value.
 
-At this point the address book has one group and one person that belongs to this group. To query the address book for entities (groups or people) use `GingerBook.find`, passing it the class of the entity you want to find. You can then output query results by calling `all()`::
+At this point the address book has one group and one person that belongs to this group. To query the address book for entities (groups or people) use `GingerBook.find`, passing it the class of the entity you want to find. You can then output query results by calling `all()`
+
+.. code-block:: python
 
   >>> all_groups = gb.find(Group).all()
   >>> all_groups
@@ -67,7 +74,9 @@ At this point the address book has one group and one person that belongs to this
 
 You can as well filter the results by different criteria by calling `filter()` in place of `all()`. The `filter()` methods accepts one or more expressions that must be of a certain format. If multiple expressions are passed, they are implicitly joined using `AND` operator.
 
-The format of the filter expression is `<entity_field_name> is|not|contains <value>`. Entity field name is the entity class attribute name; operator is one of `is`, `not`, `contains`; value is a string to search for in the entity field value::
+The format of the filter expression is `<entity_field_name> is|not|contains <value>`. Entity field name is the entity class attribute name; operator is one of `is`, `not`, `contains`; value is a string to search for in the entity field value
+
+.. code-block:: python
 
   >>> gb.find(Person).filter('last_name is Leander')
   [<Person 'Arthur Leander'>]
@@ -80,7 +89,9 @@ The format of the filter expression is `<entity_field_name> is|not|contains <val
 
 Note that in case of fields that can have multiple values, like `email_addresses`, `street_addresses`, `phone_numbers`, `group_ids`, the filtering operator is applied to each value in the list individually and the whole expression returns `True` if it returns `True` for at least one element in the list.
 
-There exists also a simple back reference from a group to its members. By calling `Group.member_ids` you can see all people who belong to this group::
+There exists also a simple back reference from a group to its members. By calling `Group.member_ids` you can see all people who belong to this group
+
+.. code-block:: python
 
   >>> friends = gb.find(Group).filter('name is friends')
   >>> friends
