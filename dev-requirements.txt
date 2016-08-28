@@ -1,0 +1,2 @@
+deepdiff==2.5.1
+pytest==3.0.1
