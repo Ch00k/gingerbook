@@ -115,7 +115,7 @@ Note that in case of fields that can have multiple values, like ``email_addresse
   >>> gb.find(Person).filter('email_addresses contains k.raymonde')
 	[<Person 'Kirsten Raymonde'>]
 
-There exists also a simple back reference from a group to its members. By calling ``Group.member_ids`` you can see all people who belong to this group
+There also exists a simple back reference from a group to its members. By calling ``Group.member_ids`` you can see all people who belong to this group
 
 .. code-block:: python
 
@@ -124,7 +124,10 @@ There exists also a simple back reference from a group to its members. By callin
   [<Group 'friends'>]
 
   >>> friends = friends[0]
-  >>> friends.members
+  >>> friends.member_ids
+  ['c9048052-d5be-44e4-ab40-f915165551e3', '71c5a95b-e916-4a48-8ce2-7124865896f0']
+
+  >>> [ab.find(Person).filter('id is {0}'.format(member_id))[0] for member_id in friends.member_ids]
   [<Person 'Arthur Leander'>, <Person 'Kirsten Raymonde'>]
 
 Running tests
