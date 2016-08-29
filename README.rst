@@ -127,7 +127,7 @@ There also exists a simple back reference from a group to its members. By callin
   >>> friends.member_ids
   ['c9048052-d5be-44e4-ab40-f915165551e3', '71c5a95b-e916-4a48-8ce2-7124865896f0']
 
-  >>> [ab.find(Person).filter('id is {0}'.format(member_id))[0] for member_id in friends.member_ids]
+  >>> [gb.find(Person).filter('id is {0}'.format(member_id))[0] for member_id in friends.member_ids]
   [<Person 'Arthur Leander'>, <Person 'Kirsten Raymonde'>]
 
 Running tests
